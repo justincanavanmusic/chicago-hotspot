@@ -1,0 +1,179 @@
+[
+    {
+        "name": "Parachute",
+        "year": 2019,
+        "location": 60618,
+        "cuisine": "Fusion",
+        "price": "$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/parachute"
+    },
+    {
+        "name": "Goosefoot",
+        "year": 2019,
+        "location": 60625,
+        "cuisine": "Contemporary",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/goosefoot"
+    },
+    {
+        "name": "Elizabeth",
+        "year": 2019,
+        "location": 60625,
+        "cuisine": "Contemporary",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/elizabeth"
+    },
+    {
+        "name": "EL Ideas",
+        "year": 2019,
+        "location": 60618,
+        "cuisine": "Contemporary",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/el-ideas"
+    },
+    {
+        "name": "Band of Bohemia",
+        "year": 2019,
+        "location": 60640,
+        "cuisine": "Gastropub",
+        "price": "$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/band-of-bohemia"
+    },
+    {
+        "name": "Schwa",
+        "year": 2019,
+        "location": 60662,
+        "cuisine": "Contemporary",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/schwa"
+    },
+    {
+        "name": "Temporis",
+        "year": 2019,
+        "location": "N/A",
+        "cuisine": "Contemporary",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/temporis"
+    },
+    {
+        "name": "Entente",
+        "year": 2019,
+        "location": 60657,
+        "cuisine": "Contemporary",
+        "price": "$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/entente"
+    },
+    {
+        "name": "Elske",
+        "year": 2019,
+        "location": 60607,
+        "cuisine": "Contemporary",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/elske"
+    },
+    {
+        "name": "Dusek's (Board & Beer)",
+        "year": 2019,
+        "location": 60608,
+        "cuisine": "Gastropub",
+        "price": "$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/dusek-s-board-beer"
+    },
+    {
+        "name": "Roister",
+        "year": 2019,
+        "location": 60607,
+        "cuisine": "Contemporary",
+        "price": "$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/roister"
+    },
+    {
+        "name": "Boka",
+        "year": 2019,
+        "location": 60614,
+        "cuisine": "Contemporary",
+        "price": "$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/boka"
+    },
+    {
+        "name": "Blackbird",
+        "year": 2019,
+        "location": 60661,
+        "cuisine": "Contemporary",
+        "price": "$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/blackbird"
+    },
+    {
+        "name": "Sepia",
+        "year": 2019,
+        "location": 60661,
+        "cuisine": "American",
+        "price": "$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/sepia"
+    },
+    {
+        "name": "North Pond",
+        "year": 2019,
+        "location": 60614,
+        "cuisine": "Contemporary",
+        "price": "$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/north-pond"
+    },
+    {
+        "name": "Everest",
+        "year": 2019,
+        "location": 60605,
+        "cuisine": "French",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/everest"
+    },
+    {
+        "name": "Topolobampo",
+        "year": 2019,
+        "location": 60654,
+        "cuisine": "Mexican",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/topolobampo"
+    },
+    {
+        "name": "Spiaggia",
+        "year": 2019,
+        "location": 60611,
+        "cuisine": "Italian",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/spiaggia"
+    },
+    {
+        "name": "Smyth",
+        "year": 2019,
+        "location": 60607,
+        "cuisine": "Contemporary",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/smyth"
+    },
+    {
+        "name": "Oriole",
+        "year": 2019,
+        "location": 60661,
+        "cuisine": "Contemporary",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/oriole"
+    },
+    {
+        "name": "Acadia",
+        "year": 2019,
+        "location": 60616,
+        "cuisine": "Contemporary",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/acadia"
+    },
+    {
+        "name": "Alinea",
+        "year": 2019,
+        "location": 60614,
+        "cuisine": "Contemporary",
+        "price": "$$$$",
+        "url": "https://guide.michelin.com/us/en/illinois/chicago/restaurant/alinea"
+    }
+]
+
