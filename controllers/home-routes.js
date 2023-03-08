@@ -8,10 +8,27 @@ router.get('/', async (req, res) => {
         const attractions = attractionData.map((attraction) => attraction.get({ plain: true }));
         res.render('attraction', { attractions });
       });
+
+
+router.get('/login', (req, res) => {
+
+  // if (req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
+  res.render('login');
+});
+
+router.get('/signup', (req, res) => {
   
-// router.get('/', async (req, res) => {
-//         res.send('all');
-//       });
-  
+  // if (req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
+
+  res.render('signup');
+});
+
+
 
 module.exports= router;
