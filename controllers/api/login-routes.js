@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Users = require('../../models/Users');
+const { Users } = require('../../models/');
 
 router.post('/login', async (req, res) => {
     try {
@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
   
     router.post('/signup', async (req, res) => {
       try {
-        const userSignUpData = await Users.create({
+        const userSignUpData = await User.create({
           username: req.body.username,
           email: req.body.email,
           password: req.body.password,

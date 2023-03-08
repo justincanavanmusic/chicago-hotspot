@@ -1,5 +1,21 @@
-<p>something yeah</p>
+
+  {{!-- {{#each attractions as | attractions | }} --}}
+{{!-- <div class="d-flex align-content-start flex-wrap"> --}}
+  <div class="d-flex justify-content-around align-content-start flex-wrap">
+
+  {{!-- <div class="d-flex justify-content-around"> --}}
+  
 
   {{#each attractions as | attractions | }}
-  <p>{{ attractions.name }}</p>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ attractions.name }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ attractions.price }} </h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{ attractions.cuisine }} </h6>
+    <p class="card-text">{{ attractions.location }}</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
   {{/each}}
