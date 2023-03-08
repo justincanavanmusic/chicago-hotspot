@@ -1,5 +1,5 @@
 const express = require('express');
-const { engine } =require('express-handlebars');
+const { engine } = require('express-handlebars');
 const sequelize = require('./config/connection');
 const controller = require('./controllers');
 
@@ -15,10 +15,6 @@ app.use(express.static('public'));
 
 
 app.use(controller)
-
-// app.get('/', (req, res) => {
-//     res.render('jclogin')
-// })
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
