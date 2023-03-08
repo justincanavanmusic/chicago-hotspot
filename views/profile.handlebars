@@ -1,12 +1,21 @@
 <div class="container-fluid">
-{{#each review}}
-<div class="card" style="width: 18rem;">
+    <h3>My Reviews:</h3>
+{{!-- {{#each review}} --}}
+<div class="card mb-3">
   <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <p class="card-text">{{body}}</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <h5 class="card-title">{{attraction.name}}Restaurant Name</h5>
+    <p class="card-text">{{review.body}}body</p>
+    <button id="edit-post" type="button" class="btn btn-primary">Edit</button>
+    <button id="delete-post" type="button" class="btn btn-primary">Delete</button>
   </div>
 </div>
-{{/each}}
+{{!-- {{/each}} --}}
+</div>
+ <div class="container">
+        <div class="mb-3">
+          <label for="edit-body" class="form-label">Edit Review</label>
+          <textarea class="form-control" id="edit-body" rows="3"></textarea>
+           <button id="submit" type="button" class="btn btn-primary">Save</button>
+        </div>
+        </div>
 </div>
