@@ -6,12 +6,12 @@ router.get('/', async (req, res) => {
         res.json(err);
       });
         const attractions = attractionData.map((attraction) => attraction.get({ plain: true }));
-        res.render('all', { attractions });
+        res.render('attraction', { attractions });
       });
   
-router.get('/', async (req, res) => {
-        res.send('all');
-      });
+// router.get('/', async (req, res) => {
+//         res.send('all');
+//       });
   
 
 module.exports= router;
