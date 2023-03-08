@@ -2,16 +2,16 @@ const router = require('express').Router();
 const { Attractions, Users, Reviews }   = require('../models');
 
 router.get('/', async (req, res) => {
-    const attractionData = await Attraction.findAll().catch((err) => { 
+    const attractionData = await Attractions.findAll().catch((err) => { 
         res.json(err);
       });
         const attractions = attractionData.map((attraction) => attraction.get({ plain: true }));
-        res.render('all', { attractions });
+        res.render('attraction', { attractions });
       });
   
-router.get('/', async (req, res) => {
-        res.send('all');
-      });
+// router.get('/', async (req, res) => {
+//         res.send('all');
+//       });
   
 
 module.exports= router;
