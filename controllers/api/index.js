@@ -1,4 +1,3 @@
-const router = require('express').Router();
 
 const loginRoutes = require('./login-routes');
 
