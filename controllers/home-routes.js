@@ -27,7 +27,7 @@ router.get('/profile', async (req, res) => {
     });
     const reviews = userReview.map((data) => data.get({ plain: true }));
     console.log(reviews);
-    res.render('profile', { reviews, loggedIn: req.session,loggedIn })
+    res.render('profile', { profile, loggedIn: req.session,loggedIn })
   } catch (err) {
     res.redirect('login');
   }
