@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { Attractions, Users, Reviews } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+
+router.get('/', withAuth, async (req, res) => {
   const attractionData = await Attractions.findAll().catch((err) => {
     res.json(err);
   });
@@ -9,20 +11,21 @@ router.get('/', async (req, res) => {
   res.render('attraction', { attractions, loggedIn: req.session.loggedIn });
 });
 
-router.get('/one-restaurant', async (req, res) => {
+router.get('/one-restaurant', withAuth, async (req, res) => {
   res.render('one-restaurant');
 });
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
   res.render('profile');
 });
 
 router.get('/login', (req, res) => {
 
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    console.log(req.session)
+    return;
+  }
   res.render('login');
 });
 
