@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const { Users } = require('../../models/');
 
+// */api/users
+
+// login
 router.post('/login', async (req, res) => {
   try {
     const userLoginData = await Users.findOne({
@@ -26,6 +29,8 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+      req.session.userId = userLoginData.id;
+      req.session.username = userLoginData.username
       req.session.loggedIn = true;
       res
         .status(200)
@@ -37,7 +42,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/signup', async (req, res) => {
+// sign up
+router.post('/', async (req, res) => {
   try {
     const userSignUpData = await Users.create({
       username: req.body.username,
@@ -45,7 +51,8 @@ router.post('/signup', async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.user_id = userSignUpData.id
+      req.session.userId = userSignUpData.id;
+      req.session.username = userSignUpData.username;
       req.session.loggedIn = true;
 
       res.status(200).json(userSignUpData);
@@ -56,6 +63,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+// logout
 router.post('/logout', (req, res) => {
   // When the user logs out, the session is destroyed
   if (req.session.loggedIn) {
