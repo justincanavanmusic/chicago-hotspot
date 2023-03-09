@@ -9,6 +9,8 @@ router.get('/', async (req, res) => {
         const attractions = attractionData.map((attraction) => attraction.get({ plain: true }));
         res.render('attraction', { attractions });
       });
+ 
+      
 
 router.get('/one-restaurant', async (req, res) => {
       res.render('one-restaurant');
