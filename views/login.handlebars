@@ -8,14 +8,14 @@
                 Login
             </div>
             <div class="card-body">
-                <form>
+                <form class="loginForm">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Username</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="loginUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="loginUsername">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -29,14 +29,14 @@
                 Signup
             </div>
             <div class="card-body">
-                <form>
+                <form class="signupForm">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Username</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="signupUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="signupUsername">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="signupPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signupPassword">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -50,9 +50,12 @@
 
 <div class="card fixed-bottom">
     <div class="card-footer">
-        Featured
+        <h6>About this site:</h6>
     </div>
     <div class="card-body">
-        <h5 class="card-title">About</h5>
+        <p>Made by Allison, Justin, Jack, and Matt<p>
+        <p><a href="https://github.com/allisonnault/Chicago-Attractions">GitHub Repo</a></p>
     </div>
 </div>
+
+<script src="../public/js/login.js"></script>
