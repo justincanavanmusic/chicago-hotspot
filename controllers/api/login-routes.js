@@ -37,6 +37,26 @@ router.post('/login', async (req, res) => {
     }
   });
   
+    router.post('/signup', async (req, res) => {
+      try {
+        const userSignUpData = await User.create({
+          username: req.body.username,
+          email: req.body.email,
+          password: req.body.password,
+        });
+    
+        req.session.save(() => {
+       req.session.user_id = userSignUpData.id
+          req.session.loggedIn = true;
+    
+          res.status(200).json(userSignUpData);
+        });
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
+    });
+  
     router.post('/logout', (req, res) => {
       // When the user logs out, the session is destroyed
       if (req.session.loggedIn) {

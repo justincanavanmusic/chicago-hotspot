@@ -9,6 +9,13 @@ router.get('/', async (req, res) => {
   res.render('attraction', { attractions });
 });
 
+router.get('/one-restaurant', async (req, res) => {
+      res.render('one-restaurant');
+    });
+
+router.get('/profile', async (req, res) => {
+      res.render('profile');
+});
 
 router.get('/login', (req, res) => {
 
