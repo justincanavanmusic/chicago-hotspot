@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Attractions, Users, Reviews }   = require('../models');
 
+
 router.get('/', async (req, res) => {
     const attractionData = await Attractions.findAll().catch((err) => { 
         res.json(err);
