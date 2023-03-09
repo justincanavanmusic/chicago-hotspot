@@ -20,7 +20,7 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     const userReview = await Reviews.findAll({
       where: {
-        userId: req.sessionID.userId,
+        user_id: req.session.userId,
       },
       include: [{
         model: Attractions,
@@ -30,19 +30,20 @@ router.get('/profile', withAuth, async (req, res) => {
     });
     const reviews = userReview.map((data) => data.get({ plain: true }));
     console.log(reviews);
-    res.render('profile', { reviews, loggedIn: req.session,loggedIn })
+    res.render('profile', { reviews, loggedIn: req.session.loggedIn })
   } catch (err) {
     res.redirect('login');
+    console.log(err)
   }
 });
 
 router.get('/login', (req, res) => {
 
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    console.log(req.session)
-    return;
-  }
+  // if (req.session.loggedIn) {
+  //   res.redirect('/');
+  //   console.log(req.session)
+  //   return;
+  // }
   res.render('login');
 });
 
