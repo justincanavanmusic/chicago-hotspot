@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { Users } = require('../../models/');
-
+const { Attractions, Users, Reviews } = require('../../models/');
+const withAuth = require('../utils/auth');
 // */api/users
 
 // login
@@ -75,6 +75,25 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+// get user profile
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+      const review = await Reviews.findAll({
+          where: {
+             user_id: req.session.userId,
+          },
+          include: [
+              Attractions, Users
+          ]
+      });
+    const reviews = review.map((data)=> data.get({ plain: true }))
+      res.render('profile', { reviews, loggedIn: req.session.loggedIn })
+  } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
   }
 });
 
