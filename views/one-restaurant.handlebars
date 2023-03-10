@@ -42,11 +42,11 @@
   });
 </script>
 
+{{!-- list of reviews --}}
 
+<p>{{ attraction.name }}</p>
 
-<p>{{ attractions.body }}</p>
-
-{{#each reviews as |review|}}
+{{#each attraction.reviews as |review|}}
 <p>{{review.body}}</p>
 <p>{{review.user.username}}</p>
 
