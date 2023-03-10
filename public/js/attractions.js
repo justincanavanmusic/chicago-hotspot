@@ -1,11 +1,9 @@
-const attractionCard = document.querySelectorAll('.card');
+// const attractionCard = document.querySelectorAll('.card');
 
-attractionCard.forEach((card) => {
-    const id = card.getAttribute('id');
-})
+// attractionCard.forEach((card) => {
+//     const id = card.getAttribute('id');
+// })
 
-const attraction = attractions.find((attraction) => {
-    return `card-${attraction.id}` === id;
-});
-
-console.log(attraction);
+// const attraction = attractions.find((attraction) => {
+//     return `card-${attraction.id}` === id;
+// });
