@@ -42,6 +42,20 @@
   });
 </script>
 
+<<<<<<< HEAD
 
 
 <p>{{ attractions.body }}</p>
+=======
+{{!-- list of reviews --}}
+
+<p>{{ attraction.name }}</p>
+
+{{#each attraction.reviews as |review|}}
+<p>{{review.body}}</p>
+<p>{{review.user.username}}</p>
+
+{{/each}}
+
+<script src="/js/one-restaurant.js"></script>
+>>>>>>> origin/main
