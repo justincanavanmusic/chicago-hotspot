@@ -4,19 +4,37 @@ const withAuth = require('../utils/auth');
 
 
 router.get('/', withAuth, async (req, res) => {
-  const attractionData = await Attractions.findAll().catch((err) => {
+  const attractionData = await Reviews.findAll().catch((err) => {
     res.json(err);
   });
   const attractions = attractionData.map((attraction) => attraction.get({ plain: true }));
   res.render('attraction', { attractions, loggedIn: req.session.loggedIn });
 });
 
+router.get('/one-restaurant/', async (req, res) => {
+
+  res.render('one-restaurant')
+
+});
+
+
 router.get('/one-restaurant/:id', async (req, res) => {
-  const reviewData = await Reviews.findAll().catch((err) => {
+  const reviewData = await Reviews.findAll({
+    where: {
+      attraction_id: req.params.id
+    },
+    include: [{
+      model: Attractions
+    },
+  {
+    model: Users
+  }]
+  }).catch((err) => {
+    
     res.json(err);
   });
   const reviews = reviewData.map((review) => review.get({ plain: true }));
-  console.log(reviews[0].body);
+  console.log(reviews);
   res.render('one-restaurant', { reviews, loggedIn: req.session.loggedIn });
 
 });
