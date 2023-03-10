@@ -1,4 +1,4 @@
-<div class="card" style="width: 50rem;">
+<div class="card" style="width: 130rem;">
   <script src="./js/one-restaurant.js"></script>
   <div class="container">
   <div class="card-body row justify-content-evenly">
@@ -22,8 +22,26 @@
 </div>
 <div class="input-group mb-5 mt-5">
   <input type="text" class="form-control" placeholder="Comment..." aria-label="Comment..."
-    aria-describedby="button-addon2">
-  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
+    aria-describedby="button-addon2" id="comment-input">
+  <button class="btn btn-outline-secondary" type="button" id="submit-button">Submit</button>
 </div>
+
+<div id="comment-output"></div>
+
+<script>
+  // Add an event listener to the submit button
+  const submitButton = document.getElementById("submit-button");
+  submitButton.addEventListener("click", function () {
+    // Get the value of the comment input field
+    const commentInput = document.getElementById("comment-input");
+    const comment = commentInput.value;
+
+    // Update the comment output element with the entered comment
+    const commentOutput = document.getElementById("comment-output");
+    commentOutput.textContent = comment;
+  });
+</script>
+
+
 
 <p>{{ attractions.body }}</p>
