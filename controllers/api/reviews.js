@@ -5,15 +5,15 @@ const { Attractions, Users, Reviews } = require('../../models');
 // get reviews by user
 router.get('/:id', async (req, res) => {
     try {
-        const review = await Reviews.findOne({
+        const review = await Reviews.findAll({
             where: {
-                id: req.params.id
+               user_id: req.params.id
             },
             include: [
                 Attractions, Users
             ]
         });
-      const reviewData = review.get({ plain: true })
+      const reviewData = review.map((data)=> data.get({ plain: true }))
     
         res.render('profile', { reviewData, loggedIn: req.session.loggedIn })
     } catch (err) {
