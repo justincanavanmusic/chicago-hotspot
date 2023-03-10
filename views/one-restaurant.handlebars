@@ -1,23 +1,25 @@
-<div class="card" style="width: 100rem;">
+<div class="card" style="width: 50rem;">
   <script src="./js/one-restaurant.js"></script>
   <div class="container">
   <div class="card-body row justify-content-evenly">
-    <h5 class="card-title">Restaurant Name</h5>
-    <h6 class="card-subtitle mb-4 text-muted">Cuisine</h6>
-    <p class="card-text mt-5">A description of the Restaurant with the address and phone number.
-    <a href="#" class="card-link">Link to their website</a>
+    <h5 class="card-title">{{attraction.name}}</h5>
+    <h6 class="card-subtitle mb-4 text-muted">{{attraction.cuisine}}</h6>
+    <p class="card-text mt-1">{{attraction.year}}
+    <p class="card-text mt-0">{{attraction.phonenumber}}
+    <p class="card-text mt-0">{{attraction.location}}
+    <p class="card-text mt-0">{{attraction.price}}</p>
+   <a href="{{attraction.url}}" class="card-link">{{attraction.url}}</a>
   </div>
 </div>
 </div>
 <div class="input-group input-group-lg mb-5 mt-5">
-  <span class="input-group-text" id="inputGroup-sizing-lg">Username</span>
+  <span class="input-group-text" id="inputGroup-sizing-lg">{{Username}}</span>
   <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
 </div>
 <div class="input-group input-group-lg mb-5 mt-5">
-  <span class="input-group-text" id="inputGroup-sizing-lg">Username</span>
+  <span class="input-group-text" id="inputGroup-sizing-lg">{{Username}}</span>
   <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
 </div>
-
 <div class="input-group mb-5 mt-5">
   <input type="text" class="form-control" placeholder="Comment..." aria-label="Comment..."
     aria-describedby="button-addon2">
