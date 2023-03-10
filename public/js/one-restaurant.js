@@ -8,7 +8,7 @@ form.addEventListener('submit', (event) => {
 
   // TODO: Handle form submission (e.g. send data to server)
         // DELETE BUTTON STUFF 
-  const delButtonListener = async (event) => {
+  const deleteButton = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
@@ -24,10 +24,10 @@ form.addEventListener('submit', (event) => {
     }
   };
               // DELETE BUTTON
-  var delButtons = document
+ var buttonEls = document
   .querySelectorAll('.review-list')
-  for (let i = 0; i < delButtons.length; i++) {
-  delButtons[i].addEventListener('click', delButtonListener);
+  for (let i = 0; i < buttonEls.length; i++) {
+  buttonEls[i].addEventListener('click', deleteButton);
   }
 
   // Optional: clear input fields after form submission

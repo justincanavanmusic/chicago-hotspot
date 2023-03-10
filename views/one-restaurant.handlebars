@@ -29,22 +29,17 @@
 <div id="comment-output"></div>
 
 <script>
-  // Add an event listener to the submit button
+
   const submitButton = document.getElementById("submit-button");
   submitButton.addEventListener("click", function () {
-    // Get the value of the comment input field
-    const commentInput = document.getElementById("comment-input");
-    const comment = commentInput.value;
 
-    // Update the comment output element with the entered comment
+    const commentInput = document.getElementById("comment-input");
+
     const commentOutput = document.getElementById("comment-output");
     commentOutput.textContent = comment;
   });
 </script>
 
-
-
-<p>{{ attractions.body }}</p>
 
 {{#each reviews as |review|}}
 <p>{{review.body}}</p>
