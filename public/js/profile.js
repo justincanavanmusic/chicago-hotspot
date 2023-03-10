@@ -22,7 +22,7 @@ const deleteButton = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        window.location.reload();
       } else {
         alert('Failed to delete post');
       }
@@ -30,7 +30,7 @@ const deleteButton = async (event) => {
   };
               // DELETE BUTTON
  var buttonEls = document
-  .querySelectorAll('.review-list')
+  .querySelectorAll('.del-button')
   for (let i = 0; i < buttonEls.length; i++) {
   buttonEls[i].addEventListener('click', deleteButton);
   }
