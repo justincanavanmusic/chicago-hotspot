@@ -13,8 +13,8 @@
     <h6 class="card-subtitle mb-2 text-muted">{{ attractions.price }} </h6>
     <h6 class="card-subtitle mb-2 text-muted">{{ attractions.cuisine }} </h6>
     <p class="card-text">{{ attractions.location }}</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <a href="{{ attractions.url }}" target="_blank" class="card-link">{{ attractions.name}}</a>
+    {{!-- <a href="#" class="card-link">Another link</a> --}}
   </div>
 </div>
 
