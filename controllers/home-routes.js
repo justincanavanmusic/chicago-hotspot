@@ -18,29 +18,6 @@ router.get('/one-restaurant/', async (req, res) => {
 });
 
 
-router.get('/one-restaurant/:id', async (req, res) => {
-  const reviewData = await Reviews.findAll({
-    where: {
-      attraction_id: req.params.id
-    },
-    include: [{
-      model: Attractions
-    },
-  {
-    model: Users
-  }]
-  }).catch((err) => {
-    
-    res.json(err);
-  });
-  const reviews = reviewData.map((review) => review.get({ plain: true }));
-  console.log(reviews);
-  res.render('one-restaurant', { reviews, loggedIn: req.session.loggedIn });
-
-});
-
-
-
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userReview = await Reviews.findAll({

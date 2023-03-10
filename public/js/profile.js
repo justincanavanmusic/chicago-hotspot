@@ -12,3 +12,25 @@ $('.editReviewForm').on('submit', (e) => {
     window.location.reload();
     window.location.replace('/profile');
 });
+
+const deleteButton = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/reviews/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to delete post');
+      }
+    }
+  };
+              // DELETE BUTTON
+ var buttonEls = document
+  .querySelectorAll('.review-list')
+  for (let i = 0; i < buttonEls.length; i++) {
+  buttonEls[i].addEventListener('click', deleteButton);
+  }

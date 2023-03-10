@@ -29,25 +29,28 @@
 <div id="comment-output"></div>
 
 <script>
-
+  // Add an event listener to the submit button
   const submitButton = document.getElementById("submit-button");
   submitButton.addEventListener("click", function () {
-
+    // Get the value of the comment input field
     const commentInput = document.getElementById("comment-input");
+    const comment = commentInput.value;
 
+    // Update the comment output element with the entered comment
     const commentOutput = document.getElementById("comment-output");
     commentOutput.textContent = comment;
   });
 </script>
 
+{{!-- list of reviews --}}
 
-{{#each reviews as |review|}}
+<p>{{ attraction.name }}</p>
+
+{{#each attraction.reviews as |review|}}
 <p>{{review.body}}</p>
 <p>{{review.user.username}}</p>
 
-<div class="col-md-6 review-list">
-<button class="btn btn-sm btn-danger" data-id="{{review.id}}">DELETE</button>
-</div>
+
 {{/each}}
 
 <script src="/js/one-restaurant.js"></script>
