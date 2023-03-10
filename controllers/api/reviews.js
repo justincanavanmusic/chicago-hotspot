@@ -6,8 +6,8 @@ const { Attractions, Users, Reviews } = require('../../models');
 router.get('/:id', async (req, res) => {
     try {
         const review = await Reviews.findOne({
-            where : {
-              id: req.params.id
+            where: {
+                id: req.params.id
             },
             include: [
                 Attractions, Users
@@ -15,7 +15,10 @@ router.get('/:id', async (req, res) => {
         });
         const reviewData = review.dataValues;
         console.log(reviewData);
-    } catch
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 })
 
 module.exports = router;

@@ -15,7 +15,6 @@ router.get('/one-restaurant', withAuth, async (req, res) => {
   res.render('one-restaurant');
 });
 
-
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userReview = await Reviews.findAll({
