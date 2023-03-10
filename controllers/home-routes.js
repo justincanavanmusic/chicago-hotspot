@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 
 router.get('/', withAuth, async (req, res) => {
-  const attractionData = await Reviews.findAll().catch((err) => {
+  const attractionData = await Attractions.findAll().catch((err) => {
     res.json(err);
   });
   const attractions = attractionData.map((attraction) => attraction.get({ plain: true }));
