@@ -11,9 +11,17 @@ router.get('/', withAuth, async (req, res) => {
   res.render('attraction', { attractions, loggedIn: req.session.loggedIn });
 });
 
-router.get('/one-restaurant', withAuth, async (req, res) => {
-  res.render('one-restaurant');
+router.get('/one-restaurant/:id', async (req, res) => {
+  const reviewData = await Reviews.findAll().catch((err) => {
+    res.json(err);
+  });
+  const reviews = reviewData.map((review) => review.get({ plain: true }));
+  console.log(reviews[0].body);
+  res.render('one-restaurant', { reviews, loggedIn: req.session.loggedIn });
+
 });
+
+
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -22,7 +30,7 @@ router.get('/profile', withAuth, async (req, res) => {
         user_id: req.session.userId,
       },
       include: [{
-        model: Attractions,
+        model: Reviews,
         required: true
       }]
 

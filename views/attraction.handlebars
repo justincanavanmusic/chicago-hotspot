@@ -1,32 +1,19 @@
-
-  {{!-- {{#each attractions as | attractions | }} --}}
-{{!-- <div class="d-flex align-content-start flex-wrap"> --}}
-  <div class="d-flex justify-content-around align-content-start flex-wrap">
-
-  {{!-- <div class="d-flex justify-content-around"> --}}
-  
+<div class="d-flex justify-content-around align-content-start flex-wrap">
 
   {{#each attractions as | attraction | }}
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{ attractions.name }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{ attractions.price }} </h6>
-    <h6 class="card-subtitle mb-2 text-muted">{{ attractions.cuisine }} </h6>
-    <p class="card-text">{{ attractions.location }}</p>
-    <a href="{{ attractions.url }}" target="_blank" class="card-link">{{ attractions.name}}</a>
-    <a href="/one-restaurant" class="card-link">Another link</a>
-    <h5 class="card-title">{{ attraction.name }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{ attraction.price }} </h6>
-    <h6 class="card-subtitle mb-2 text-muted">{{ attraction.cuisine }} </h6>
-    <p class="card-text">{{ attraction.location }}</p>
-    <a href="/api/attractions/{{attraction.id}}" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ attraction.name }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ attraction.price }} </h6>
+      <h6 class="card-subtitle mb-2 text-muted">{{ attraction.cuisine }} </h6>
+      <p class="card-text">{{ attraction.location }}</p>
+      <a href="/api/attractions/{{attraction.id}}" class="card-link">Card link</a>
+    </div>
   </div>
+
+  {{/each}}
+
 </div>
 
-{{/each}}
-
 <script src="/js/attractions.js"></script>
-
-
-{{!-- <button data-id="{{postData.id}}" id ="link"></button> --}}

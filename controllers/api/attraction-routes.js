@@ -17,8 +17,9 @@ router.get('/:id', withAuth, async (req, res) => {
         })
         const attraction = attractionData.get({ plain: true });
         res.render('one-restaurant', { attraction, loggedIn: req.session.loggedIn });
-        console.log(attraction.reviews[0].body)
-        console.log(attraction.reviews[0].id)
+        console.log(attractionData)
+        // console.log(attraction.reviews[0].body)
+        // console.log(attraction.reviews[0].id)
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
