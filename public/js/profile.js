@@ -10,4 +10,5 @@ $('.editReviewForm').on('submit', (e) => {
     })
     .then(res => res.json())
     window.location.reload();
+    window.location.replace('/profile');
 });
