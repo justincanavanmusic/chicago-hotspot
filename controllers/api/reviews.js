@@ -13,8 +13,9 @@ router.get('/:id', async (req, res) => {
                 Attractions, Users
             ]
         });
-        const reviewData = review.dataValues;
-        console.log(reviewData);
+      const reviewData = review.get({ plain: true })
+    
+        res.render('profile', { reviewData, loggedIn: req.session.loggedIn })
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
