@@ -61,7 +61,7 @@
      .then(data => {
        console.log(data);
          if (data) {
-           //document.location.reload();
+           document.location.reload();
            commentOutput.textContent = commentone;
        } else {
          alert('Failed to create review');
