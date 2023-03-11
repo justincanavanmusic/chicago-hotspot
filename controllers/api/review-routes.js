@@ -34,7 +34,12 @@ router.delete('/:id', async (req, res) => {
     }
   });
   
-
+router.post("/", (req, res) => {
+  console.log(req.body);
+  Reviews.create(req.body)
+    .then((review) => res.json(review))
+    .catch((err) => res.status(400).json({ error: "unable to update" }));
+});
 
 
 
