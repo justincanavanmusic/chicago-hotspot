@@ -34,13 +34,20 @@ router.delete('/:id', async (req, res) => {
     }
   });
   
-router.post("/", (req, res) => {
-  console.log(req.body);
-  Reviews.create(req.body)
-    .then((review) => res.json(review))
-    .catch((err) => res.status(400).json({ error: "unable to update" }));
+// new review POST
+router.post('/:id', async (req, res) => {
+  try {
+      const newReview = await Reviews.create({
+          body: req.body.commentInput,
+          user_id: req.session.userId,
+          attraction_id: req.params.id,
+      });
+      console.log(req.body);
+      res.status(200).json(newReview);
+  } catch (err) {
+      res.status(500).json(err);
+  }
 });
-
 
 
 module.exports = router;

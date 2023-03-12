@@ -5,7 +5,6 @@ const withAuth = require('../utils/auth');
 
 // login
 router.post('/login', async (req, res) => {
-  console.log(req.body)
   try {
     const userLoginData = await Users.findOne({
       where: {
@@ -52,7 +51,7 @@ router.post('/', async (req, res) => {
       username: req.body.username,
       password: req.body.password,
     });
-console.log(userSignUpData)
+
     req.session.save(() => {
       req.session.userId = userSignUpData.id;
       req.session.username = userSignUpData.username;
