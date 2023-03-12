@@ -1,5 +1,5 @@
 <div class="card" style="width: 130rem;">
-  <script src="./js/one-restaurant.js"></script>
+
   <div class="container">
   <div class="card-body row justify-content-evenly">
     <h5 class="card-title">{{attraction.name}}</h5>
@@ -12,44 +12,36 @@
   </div>
 </div>
 </div>
-<div class="input-group input-group-lg mb-5 mt-5">
+{{!-- <div class="input-group input-group-lg mb-5 mt-5">
   <span class="input-group-text" id="inputGroup-sizing-lg">{{Username}}</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-</div>
-<div class="input-group input-group-lg mb-5 mt-5">
+  <output  type="text" id="comment-output"class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+</div> --}}
+{{!-- <div class="input-group input-group-lg mb-5 mt-5">
   <span class="input-group-text" id="inputGroup-sizing-lg">{{Username}}</span>
-  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-</div>
+  <input type="text" id="commentInput" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+</div> --}}
+
+{{!-- add review: --}}
+<div class="container">
 <div class="input-group mb-5 mt-5">
-  <input type="text" class="form-control" placeholder="Comment..." aria-label="Comment..."
+  <input type="text" class="form-control" placeholder="Add a review..." aria-label="Add a review..."
     aria-describedby="button-addon2" id="comment-input">
   <button class="btn btn-outline-secondary" type="button" id="submit-button">Submit</button>
 </div>
+</div>
 
-<div id="comment-output"></div>
-
-<script>
-  // Add an event listener to the submit button
-  const submitButton = document.getElementById("submit-button");
-  submitButton.addEventListener("click", function () {
-    // Get the value of the comment input field
-    const commentInput = document.getElementById("comment-input");
-    const comment = commentInput.value;
-
-    // Update the comment output element with the entered comment
-    const commentOutput = document.getElementById("comment-output");
-    commentOutput.textContent = comment;
-  });
-</script>
-
-{{!-- list of reviews --}}
-
-<p>{{ attraction.name }}</p>
-
+{{!-- reviews: --}}
+<div class="container">
 {{#each attraction.reviews as |review|}}
-<p>{{review.body}}</p>
-<p>{{review.user.username}}</p>
-
+<div>
+ <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{review.user.username}}</h5>
+      <p class="card-text">"{{review.body}}"</p>
+      <p class="card-text">{{format_date review.createdAt}}</p>
+  </div>
+  </div>
 {{/each}}
+</div>
 
-<script src="/js/one-restaurant.js"></script>
+  <script src="/js/one-restaurant.js"></script>

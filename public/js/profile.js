@@ -1,7 +1,8 @@
+// edit review modal
 $('.editReviewForm').on('submit', (e) => {
     e.preventDefault();
     const id = e.target.dataset.id;
-    const body = $('#editBody').val().trim();
+    const body = $(`#editBody${id}`).val().trim();
 
     fetch(`/api/reviews/${id}`, {
         method: 'PUT',
