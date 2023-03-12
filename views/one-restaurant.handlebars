@@ -1,17 +1,23 @@
-<div class="card" style="width: 130rem;">
 
-  <div class="container">
-  <div class="card-body row justify-content-evenly">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mt-5 mx-auto">
+      <div class="card text-center d-flex justify-content-center">
+        <div class="card-body">
     <h5 class="card-title">{{attraction.name}}</h5>
-    <h6 class="card-subtitle mb-4 text-muted">{{attraction.cuisine}}</h6>
+    <h6 class="card-subtitle mb-4  text-muted">{{attraction.cuisine}}</h6>
     <p class="card-text mt-1">{{attraction.year}}
     <p class="card-text mt-0">{{attraction.phonenumber}}
     <p class="card-text mt-0">{{attraction.location}}
     <p class="card-text mt-0">{{attraction.price}}</p>
-   <a href="{{attraction.url}}" class="card-link">{{attraction.url}}</a>
+   <a href="{{attraction.url}}" class="card-link" target="_blank">Check out the website!</a>
   </div>
 </div>
 </div>
+</div>
+</div>
+
+
 {{!-- <div class="input-group input-group-lg mb-5 mt-5">
   <span class="input-group-text" id="inputGroup-sizing-lg">{{Username}}</span>
   <output  type="text" id="comment-output"class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
@@ -23,25 +29,33 @@
 
 {{!-- add review: --}}
 <div class="container">
-<div class="input-group mb-5 mt-5">
-  <input type="text" class="form-control" placeholder="Add a review..." aria-label="Add a review..."
-    aria-describedby="button-addon2" id="comment-input">
+<div class="input-group mb-5 mt-5 col-sm-4 d-flex justify-content-center" >
+  <div class="col-sm-4">
+  <input type="text" class="form-control"  placeholder="Add a review..." aria-label="Add a review..."
+    aria-describedby="button-addon2" id="comment-input" rows="5">
+    </div>
   <button class="btn btn-outline-secondary" type="button" id="submit-button">Submit</button>
+ 
 </div>
 </div>
 
-{{!-- reviews: --}}
-<div class="container">
+{{!-- <div id="comment-output"></div> --}}
+
+<div class="d-flex justify-content-center mb-4">
+<h4>Comments</h4>
+</div>
+
+{{!-- list of reviews --}}
+<div class="d-flex justify-content-around align-content-start flex-wrap">
 {{#each attraction.reviews as |review|}}
-<div>
- <div class="card mb-3">
-    <div class="card-body">
-      <h5 class="card-title">{{review.user.username}}</h5>
-      <p class="card-text">"{{review.body}}"</p>
-      <p class="card-text">{{format_date review.createdAt}}</p>
+<div class="card">
+  <div class="card-body">
+   <p>{{review.body}}</p>
+<p>Posted by: {{review.user.username}} on {{format_date review.createdAt}} </p>
   </div>
-  </div>
+</div>
+
 {{/each}}
 </div>
 
-  <script src="/js/one-restaurant.js"></script>
+<script src="/js/one-restaurant.js"></script>
