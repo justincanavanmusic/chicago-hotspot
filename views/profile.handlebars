@@ -1,40 +1,43 @@
 <div class="container-fluid">
   <h3> My Reviews:</h3>
   {{#each reviews as |review|}}
-  <div class="card mb-3">
-    <div class="card-body">
-      <h5 class="card-title">{{review.attraction.name}}</h5>
-      <p class="card-text">{{review.body}}</p>
-      <button data-id="{{review.id}}" id="edit-post" type="button" class="btn btn-primary" data-bs-toggle="modal"
-        data-bs-target="#editModal">Edit</button>
-      <button data-id="{{review.id}}" id="delete-post" type="button" class="btn btn-primary del-button">Delete</button>
-
-  </div>
-
-  <!-- Modal -->
-  <div data-id="{{review.id}}" class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="editModalLabel">{{review.attraction.name}}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form data-id="{{review.id}}" class="editReviewForm">
-            <div class="mb-3">
-              <input class="form-control" id="editBody" rows="3" value="{{review.body}}"></input>
-            </div>
-            <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
-          </form>
-        </div>
-        
+  <div>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{review.attraction.name}}</h5>
+        <p class="card-text">{{review.body}}</p>
+        <p>{{format_date review.updatedAt}}</p>
+        <button data-id="{{review.id}}" id="edit-post" type="button" class="btn btn-primary" data-bs-toggle="modal"
+          data-bs-target="#editModal">Edit</button>
+        <button data-id="{{review.id}}" id="delete-post" type="button"
+          class="btn btn-primary del-button">Delete</button>
       </div>
     </div>
-  </div>
-  {{/each}}
 
-<script src="/js/profile.js"></script>
+    <!-- Modal -->
+    <div data-id="{{review.id}}" class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="editModalLabel">{{review.attraction.name}}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form data-id="{{review.id}}" class="editReviewForm">
+              <div class="mb-3">
+                <input class="form-control" id="editBody{{review.id}}" rows="3" value="{{review.body}}"></input>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    {{/each}}
+
+    <script src="/js/profile.js"></script>
