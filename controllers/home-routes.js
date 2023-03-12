@@ -8,7 +8,7 @@ router.get('/', withAuth, async (req, res) => {
     res.json(err);
   });
   const attractions = attractionData.map((attraction) => attraction.get({ plain: true }));
-  res.render('attraction', { attractions, loggedIn: req.session.loggedIn });
+  res.render('homepage', { attractions, loggedIn: req.session.loggedIn });
 });
 
 router.get('/one-restaurant/', async (req, res) => {

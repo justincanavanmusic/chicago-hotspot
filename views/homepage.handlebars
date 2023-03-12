@@ -2,13 +2,14 @@
 
   {{#each attractions as | attraction | }}
 
-  <div class="card" style="width: 18rem;">
+  <div class="card text-center" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">{{ attraction.name }}</h5>
+      <br>
       <h6 class="card-subtitle mb-2 text-muted">{{ attraction.price }} </h6>
       <h6 class="card-subtitle mb-2 text-muted">{{ attraction.cuisine }} </h6>
       <p class="card-text">{{ attraction.location }}</p>
-      <a href="/api/attractions/{{attraction.id}}" class="card-link">Card link</a>
+      <a href="/api/attractions/{{attraction.id}}" class="card-link">Check us out!</a>
     </div>
   </div>
 
