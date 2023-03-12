@@ -17,7 +17,7 @@ router.get('/:id', withAuth, async (req, res) => {
         })
         const attraction = attractionData.get({ plain: true });
         res.render('one-restaurant', { attraction, loggedIn: req.session.loggedIn });
-        console.log(attraction)
+        // console.log(attraction)
    
     } catch (err) {
         console.log(err);
@@ -25,17 +25,7 @@ router.get('/:id', withAuth, async (req, res) => {
     }
 });
 
-router.post('/:id', withAuth, async (req, res) => {
-    try {
-        const newReview = await Reviews.create({
-            body: req.body.body,
-            user_id: req.session.userId,
-            attraction_id: req.params.id,
-        });
-        res.status(200).json(newReview);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+// new review
+
 
 module.exports = router;
