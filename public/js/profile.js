@@ -14,6 +14,7 @@ $('.editReviewForm').on('submit', (e) => {
     window.location.replace('/profile');
 });
 
+// delete review 
 const deleteButton = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
