@@ -1,9 +1,33 @@
 :root {
     --lightGreen: #c9cfbd;
-    --offWhite: #f4f3ee;
-    --white: #fffcf5;
+    --offWhite: #f3f2f0;
+    --white: #fffefc;
     --grey: #4c4d59;
     --blue: #B3DDF2;
     --red: #E4002B;
 }
 
+body {
+    background-color: var(--offWhite);
+}
+
+.card {
+    background-color: var(--white);
+}
+
+#siteNav {
+    background-color: #B3DDF2 !important;
+    font-family: 'Manrope', sans-serif;
+}
+
+.redText {
+    color: var(--red);
+}
+
+.nav-link:hover, .card-link:hover {
+    color: var(--red) !important; 
+}
+
+.card-title, .title {
+    font-family: 'Manrope', sans-serif;
+}

@@ -1,22 +1,24 @@
-<div class="container-fluid">
-  <h3> My Reviews:</h3>
+<br><br>
+{{#if reviews}}
+<div class="container col-9">
+  <h3 class="title mb-3"> My Reviews:</h3>
   {{#each reviews as |review|}}
+
   <div>
     <div class="card mb-3">
       <div class="card-body">
         <h5 class="card-title">{{review.attraction.name}}</h5>
         <p class="card-text">{{review.body}}</p>
         <p>{{format_date review.updatedAt}}</p>
-        <button data-id="{{review.id}}" id="edit-post" type="button" class="btn btn-primary" data-bs-toggle="modal"
+        <button data-id="{{review.id}}" id="edit-post" type="button" class="btn btn-secondary" data-bs-toggle="modal"
           data-bs-target="#editModal{{review.id}}">Edit</button>
-        <button data-id="{{review.id}}" id="delete-post" type="button"
-          class="btn btn-primary del-button">Delete</button>
+        <button data-id="{{review.id}}" id="delete-post" type="button" class="btn btn-danger del-button">Delete</button>
       </div>
     </div>
 
     <!-- Modal -->
-    <div data-id="{{review.id}}" class="modal fade" id="editModal{{review.id}}" tabindex="-1" aria-labelledby="editModalLabel"
-      aria-hidden="true">
+    <div data-id="{{review.id}}" class="modal fade" id="editModal{{review.id}}" tabindex="-1"
+      aria-labelledby="editModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -38,6 +40,12 @@
         </div>
       </div>
     </div>
+
     {{/each}}
+    {{else}}
+    <div class="container col-9 text-center">
+      <h5>You have not left any reviews.</h5>
+    </div>
+    {{/if}}
 
     <script src="/js/profile.js"></script>
