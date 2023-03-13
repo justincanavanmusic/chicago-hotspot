@@ -4,12 +4,11 @@
       <div class="card text-center d-flex justify-content-center">
         <div class="card-body">
           <h5 class="card-title">{{attraction.name}}</h5>
-          <h6 class="card-subtitle mb-4  text-muted">{{attraction.cuisine}}</h6>
-          <p class="card-text mt-1">{{attraction.year}}
-          <p class="card-text mt-0">{{attraction.phonenumber}}
-          <p class="card-text mt-0">{{attraction.location}}
+          <h6 class="card-subtitle mb-4  text-muted">Cuisine: {{attraction.cuisine}}</h6>
           <p class="card-text mt-0">{{attraction.price}}</p>
-          <a href="{{attraction.url}}" class="card-link" target="_blank">Check out the website!</a>
+          <p class="card-text mt-1">Established: {{attraction.year}}</p>
+          <p class="card-text mt-0">{{attraction.location}}</p>
+          <a href="{{attraction.url}}" class="card-link" target="_blank">Michelin Guide</a>
         </div>
       </div>
     </div>
@@ -23,17 +22,18 @@
       <input type="text" class="form-control" placeholder="Add a review..." aria-label="Add a review..."
         aria-describedby="button-addon2" id="comment-input" rows="5">
     </div>
-    <button data-id="{{attraction.id}}" class="btn btn-outline-secondary" type="button"
+    <button data-id="{{attraction.id}}" class="btn btn-secondary" type="button"
       id="submit-button">Submit</button>
 
   </div>
 </div>
 
 {{!-- <div id="comment-output"></div> --}}
-
+{{#if attraction.reviews}}
 <div class="d-flex justify-content-center mb-4">
-  <h4>Reviews</h4>
+  <h4 class="title">Reviews</h4>
 </div>
+{{/if}}
 
 {{!-- list of reviews --}}
 <div class="container">
@@ -48,5 +48,7 @@
   </div>
   {{/each}}
 </div>
+
+<br><br><br>
 
 <script src="/js/one-restaurant.js"></script>
