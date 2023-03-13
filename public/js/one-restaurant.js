@@ -15,7 +15,7 @@ const submitButton = document.getElementById("submit-button");
      .then(data => {
        console.log(data);
          if (data) {
-           document.location.reload();
+           document.location.replace('/profile');
     
        } else {
          alert('Failed to create review');
