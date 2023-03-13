@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Attractions, Users, Reviews } = require('../models');
 const withAuth = require('../utils/auth');
 
-
+//homepage route, gets all attractions
 router.get('/', withAuth, async (req, res) => {
   const attractionData = await Attractions.findAll().catch((err) => {
     res.json(err);
@@ -17,7 +17,7 @@ router.get('/one-restaurant/', async (req, res) => {
 
 });
 
-
+//profile route, gets all user reviews
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userReview = await Reviews.findAll({
@@ -31,7 +31,6 @@ router.get('/profile', withAuth, async (req, res) => {
 
     });
     const reviews = userReview.map((data) => data.get({ plain: true }));
-    // console.log(reviews);
     res.render('profile', { reviews, loggedIn: req.session.loggedIn })
   } catch (err) {
     res.redirect('login');
@@ -39,17 +38,12 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+//login route, renders login page
 router.get('/login', (req, res) => {
-
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   console.log(req.session)
-  //   return;
-  // }
   res.render('login');
 });
 
-// route for log out page
+// logout post route, destroys session
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -59,13 +53,5 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
-
-router.get('/logout', async (req, res) => {
-  try {
-    res.render('logout')
-  } catch(err){
-    res.status(500).json(err);
-  }
-})
 
 module.exports = router;

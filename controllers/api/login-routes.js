@@ -3,7 +3,7 @@ const { Attractions, Users, Reviews } = require('../../models/');
 const withAuth = require('../utils/auth');
 // */api/users
 
-// login
+// login post route, sets up session and validates login data
 router.post('/login', async (req, res) => {
   try {
     const userLoginData = await Users.findOne({
@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// sign up
+// sign up post route, creates new user and sets up session
 router.post('/', async (req, res) => {
   try {
     const userSignUpData = await Users.create({
@@ -65,9 +65,8 @@ router.post('/', async (req, res) => {
   }
 });
 
-// logout
+// logout post route, when the user logs out, the session is destroyed
 router.post('/logout', (req, res) => {
-  // When the user logs out, the session is destroyed
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -76,25 +75,5 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
-
-// get user profile
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-      const review = await Reviews.findAll({
-          where: {
-             user_id: req.session.userId,
-          },
-          include: [
-              Attractions, Users
-          ]
-      });
-    const reviews = review.map((data)=> data.get({ plain: true }))
-      res.render('profile', { reviews, loggedIn: req.session.loggedIn })
-  } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-  }
-});
-
 
 module.exports = router;

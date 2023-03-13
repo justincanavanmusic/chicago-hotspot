@@ -1,3 +1,4 @@
+// login route, validates user login input from form
 const loginFormHandler = async (event) => {
     event.preventDefault();
 
@@ -19,6 +20,7 @@ const loginFormHandler = async (event) => {
     }
 };
 
+// signup route, creates new user if username and password entered
 const signupFormHandler = async (event) => {
     event.preventDefault()
 
@@ -40,6 +42,7 @@ const signupFormHandler = async (event) => {
     }
 };
 
+// event listeners
 document
     .querySelector('.loginForm')
     .addEventListener('submit', loginFormHandler);

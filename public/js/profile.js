@@ -30,7 +30,8 @@ const deleteButton = async (event) => {
       }
     }
   };
-              // DELETE BUTTON
+  
+// DELETE BUTTON
  var buttonEls = document
   .querySelectorAll('.del-button')
   for (let i = 0; i < buttonEls.length; i++) {
