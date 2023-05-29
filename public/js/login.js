@@ -42,6 +42,32 @@ const signupFormHandler = async (event) => {
     }
 };
 
+const passOnChange = async (e) => {
+
+    let inputValue = e.target.value;
+    console.log(inputValue)
+
+    let validationMessage = '';
+
+    if(inputValue.length>=1 && inputValue.length<6) {
+        document.getElementById('password-validation-message').style.color='red';
+        validationMessage = 'Password needs to be 6 or more characters!'
+        console.log('<6  = ' + validationMessage)
+        
+    } 
+    if (inputValue.length>=6) {
+        document.getElementById('password-validation-message').style.color='green';
+        validationMessage = 'Password meets length requirement!'
+        console.log('>6  = ' + validationMessage)
+    } 
+    if (inputValue.length===0) {
+        validationMessage = '';
+    }
+    document.getElementById('password-validation-message').innerHTML = validationMessage;
+
+    console.log(validationMessage);
+};
+
 // event listeners
 document
     .querySelector('.loginForm')
@@ -50,3 +76,7 @@ document
 document
     .querySelector('.signupForm')
     .addEventListener('submit', signupFormHandler);
+
+    document
+    .querySelector('.signup-pass')
+    .addEventListener('input', passOnChange);

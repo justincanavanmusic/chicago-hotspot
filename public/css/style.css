@@ -28,6 +28,10 @@ body {
     color: var(--red) !important; 
 }
 
+.password-validation {
+    font-size: .95em;
+}
+
 .card-title, .title {
     font-family: 'Manrope', sans-serif;
 }
