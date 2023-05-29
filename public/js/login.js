@@ -65,7 +65,7 @@ const passOnChange = async (e) => {
     }
     document.getElementById('password-validation-message').innerHTML = validationMessage;
 
-    console.log(validationMessage);
+    // console.log(validationMessage);
 };
 
 // event listeners
