@@ -28,11 +28,11 @@
           <div class="modal-body">
             <form data-id="{{review.id}}" class="editReviewForm">
               <div class="mb-3">
-                <input class="form-control" id="editBody{{review.id}}" rows="3" value="{{review.body}}"></input>
+                <input class="form-input form-control" id="editBody{{review.id}}" data-id='{{review.id}}'rows="3" value="{{review.body}}"></input>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button id="save-btn" data-id="{{review.id}}" type="submit" class="btn btn-primary save-btn">Save changes</button>
               </div>
             </form>
           </div>
